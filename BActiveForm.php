@@ -7,56 +7,6 @@
 class BActiveForm extends CActiveForm
 {
 	/**
-	 * bootstrap3 的css文件的路径
-	 * @var string|boolen
-	 */
-	public $cssFile = false;
-	/**
-	 * 是否启用 bootstrap-theme css样式
-	 * bootstrap-theme.css是额外的CSS文件，供你使用可选。它给在按钮和其他一些元素的3D效果。
-	 * @var string|boolen
-	 */
-	public $themeFile = true;
-	/**
-	 * 是否载入压缩版的css/js文件
-	 * @var boolen
-	 */
-	public $minFile = true;
-	/**
-	 * 初始化BActiveForm
-	 * (non-PHPdoc)
-	 * @see CActiveForm::init()
-	 */
-	public function init() 
-	{
-		if ($this->cssFile === true)
-		{
-			$cssFile = dirname(__FILE__).'/css/bootstrap'.($this->minFile ? '.min' : '').'.css';
-			$this->cssFile = Yii::app()->getAssetManager()->publish($cssFile);
-			//加载图标字体
-			foreach (array('eot','svg','ttf','woff') as $ext)
-			{
-				Yii::app()->getAssetManager()->publish(dirname(__FILE__).'/css/glyphicons-halflings-regular.'.$ext);
-			}
-			Yii::app()->clientScript->registerCssFile($this->cssFile);
-			if ($this->themeFile === true)
-			{
-				$themeFile = dirname(__FILE__).'/css/bootstrap-theme'.($this->minFile ? '.min' : '').'.css';
-				$this->themeFile = Yii::app()->getAssetManager()->publish($themeFile);
-				Yii::app()->clientScript->registerCssFile($this->themeFile);
-				
-			}elseif ($this->themeFile !== false) {
-				
-				Yii::app()->clientScript->registerCssFile($this->themeFile);
-			}
-			
-		}elseif ($this->cssFile !== false){
-			
-			Yii::app()->clientScript->registerCssFile($this->cssFile);
-		}
-		parent::init();
-	}
-	/**
 	 * 使用bootstrap3样式渲染activeform的input text元素
 	 * @link BHtml::activeTextField
 	 * (non-PHPdoc)
