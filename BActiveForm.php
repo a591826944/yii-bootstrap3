@@ -143,7 +143,7 @@ class BActiveForm extends CActiveForm
 	 * @param unknown $htmlOptions
 	 * @return string
 	 */
-	public function urlFieldGroup($model,$attribute,$htmlOptions=array(),$icon = 'glyphicon glyphicon-link')
+	public function urlFieldGroup($model,$attribute,$htmlOptions=array(),$icon = 'glyphicon-link')
 	{
 		$input = $this->urlField($model, $attribute, $htmlOptions);
 		return $this->inputGroup($input, $icon);
@@ -156,7 +156,7 @@ class BActiveForm extends CActiveForm
 	 * @param unknown $htmlOptions
 	 * @return string
 	 */
-	public function emailFieldGroup($model,$attribute,$htmlOptions=array(),$icon = 'glyphicon glyphicon-envelope')
+	public function emailFieldGroup($model,$attribute,$htmlOptions=array(),$icon = 'glyphicon-envelope')
 	{
 		$input = $this->emailField($model, $attribute, $htmlOptions);
 		return $this->inputGroup($input, $icon);
@@ -182,7 +182,7 @@ class BActiveForm extends CActiveForm
 	 * @param unknown $htmlOptions
 	 * @return string
 	 */
-	public function dateFieldGroup($model,$attribute,$htmlOptions=array(),$icon = 'glyphicon glyphicon-calendar')
+	public function dateFieldGroup($model,$attribute,$htmlOptions=array(),$icon = 'glyphicon-calendar')
 	{
 		$input = $this->dateField($model, $attribute, $htmlOptions);
 		return $this->inputGroup($input, $icon);
@@ -197,7 +197,7 @@ class BActiveForm extends CActiveForm
 	{
 		if (stristr($icon, 'glyphicon-'))
 		{
-			$icon = '<i class="'.$icon.'"></i>';
+			$icon = '<i class="glyphicon '.$icon.'"></i>';
 		}
 		$html = '<div class="input-group"><span class="input-group-addon">'.$icon.'</span>'.$input.'</div>';
 		return $html;
