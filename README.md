@@ -6,7 +6,7 @@ Bootstrap3 for the Yii PHP framework.
 ----
 github 上现在也有其他的yii的bootstrap的扩展。但是基本都是基于Bootstrap2的。其次，写的使用方法上比较复杂，有一定的学习成本。也就是说在原本YII的HTML组件的基础上改变了很多使用方法，学习成本上升。  
 
-本插件除了基于Bootstrap之外，最多的改变就是尽量保持不增加新的语法，与之前YII的语法保持一致，几乎0成本。
+本插件除了基于Bootstrap3之外，最多的改变就是尽量保持不增加新的语法，与之前YII的语法保持一致，几乎0成本。
 
 ##已经完成的部分
 
