@@ -19,7 +19,9 @@ github 上现在也有其他的yii的bootstrap的扩展。但是基本都是基�
 
 4.`BLinkPager` > `CLinkPager`
 
-5.`Bootstrap` (用于引入JS和CSS)
+5.`Bootstrap` (用于引入JS和CSS)  
+
+6.`BButtonColumn` > `CButtonColumn`
 
 	所有的扩展类都以大写字母B开头，新增了一些方法和属性（但是原有的方法和属性都没有变化）。具体查看每个文件来了解新增的方法和属性。
 	例如：
@@ -98,4 +100,10 @@ github 上现在也有其他的yii的bootstrap的扩展。但是基本都是基�
 	const PAGE_LEFT="left";
 	const PAGE_RIGHT='right';
 ```  
-3.新增`displayFirstAndLast`属性，bool，用于确定是否显示首页和尾页的翻页按钮。
+3.新增`displayFirstAndLast`属性，bool，用于确定是否显示首页和尾页的翻页按钮。  
+
+##BButtonColumn新增的方法和属性
+-----
+1.`renderButton` 方法重写，让Button可以支持Bootstrap3的 Glyphicons 图标。  
+使用举例：  
+view查看按钮，属性`viewButtonImageUrl` 的默认值是 `glyphicon-eye-open` 也就是 glyphicon 图标中的眼睛图标。是的，我们只要给对应按钮的 `{$id}ButtonImageUrl`属性赋值一个可用的 glyphicon 图标的Class就可以使用该图标了。当然也可以像以前YII的使用方法一样，指定一个图片的URL，来作为按钮的图标。判断的标准是：如果属性的值中含有 `glyphicon-` 这个前缀，就是用 glyphicon 图标，否则使用哪个YII的默认的图片地址方式。
