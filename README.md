@@ -47,4 +47,55 @@ github 上现在也有其他的yii的bootstrap的扩展。但是基本都是基�
 
 ##BActiveForm新增的方法和属性
 --------
-未完待续
+1. 对所有的`input`输入框的元素（text/email/password等）新增带有Group后缀的方法，例如 `textFieldGroup`,会生成 带icon的`input`输入框  
+
+
+##BGridView新增的方法和属性
+-----------------------
+1.增加public属性 `tableType` 改属性的值是指定的静态属性之一，分别对应Bootstrap中的四中表格样式。  
+
+```
+	/**
+	 * 条纹表格
+	 */
+	const TABLE_TYPE_STRIPED = 'striped';
+	/**
+	 * 带边框表格
+	 */
+	const TABLE_TYPE_BORDERED = 'bordered';
+	/**
+	 * 鼠标悬停 表格
+	 */
+	const TABLE_TYPE_HOVER = 'hover';
+	/**
+	 * 紧缩表格
+	 */
+	const TABLE_TYPE_CONDENSED = 'condensed';
+```  
+2.Grid的翻页默认使用`BLinkPager`替换掉YII的`CLinkPager`.  
+
+##BHtml新增的方法和属性
+-----------------
+1.新增静态方法`mergeClass` 用于组件内部合并用户添加的CSS Class 和 Bootstrap样式的CSS Class  
+
+##BLinkPager新增的方法和属性
+-------------
+1.新增`type`属性，属性值由以下两个常量属性指定，用于确定翻页的尺寸样式。  
+
+```
+	/**
+	 * 翻页的大小尺寸样式 
+	 */
+	const PAGE_LARGE = 'lg';
+	const PAGE_SMALL = 'sm';
+```  
+2.新增`site`属性，属性值有以下两个常量确定，用于确定翻页的位置。  
+
+```
+	/**
+	 * 翻页的位置 默认右边
+	 */
+	const PAGE_LEFT="left";
+	const PAGE_RIGHT='right';
+```  
+3.新增`displayFirstAndLast`属性，bool，用于确定是否显示首页和尾页的翻页按钮。
