@@ -43,17 +43,17 @@ class Bootstrap
 	 * 注册bootstrap的核心JS文件
 	 * @param string $jquery
 	 */
-	public static function registerCoreJs($position = CClientScript::POS_HEAD)
+	public static function registerCoreJs($position = CClientScript::POS_END)
 	{
 		$jsFile = dirname(__FILE__).'/js/bootstrap'.(YII_DEBUG ? '' : '.min').'.js';
 		$jsFile = Yii::app()->getAssetManager()->publish($jsFile);
-		Yii::app()->clientScript->registerCssFile($jsFile,$position);
+		Yii::app()->clientScript->registerScriptFile($jsFile,$position);
 	}
 	/**
 	 * 注册所有的JS文件
 	 * @param unknown $position
 	 */
-	public static function registerAllJs($position = CClientScript::POS_HEAD)
+	public static function registerAllJs($position = CClientScript::POS_END)
 	{
 		self::registerYiiJquery();
 		self::registerCoreJs($position);
