@@ -25,7 +25,9 @@ github 上现在也有其他的yii的bootstrap的扩展。但是基本都是基�
 
 6.`BButtonColumn` > `CButtonColumn`  
 
-7.`BMenu` > `CMenu`
+7.`BMenu` > `CMenu`  
+
+8.`BBreadcrumbs` > `CBreadcrumbs`
 
 	所有的扩展类都以大写字母B开头，新增了一些方法和属性（但是原有的方法和属性都没有变化）。具体查看每个文件来了解新增的方法和属性。
 	例如：
@@ -152,5 +154,21 @@ view查看按钮，属性`viewButtonImageUrl` 的默认值是 `glyphicon-eye-ope
 		),
     	'typeStyle'=>BMenu::TYPE_STYLE_PILL,
     	//'typeSite'=>BMenu::TYPE_SITE_STACK
+	));
+```
+
+##BBreadcrumbs新增的方法和属性
+-----
+1.暂无新增，一切与YII的使用方式一致  
+
+2.使用示例：  
+
+```
+	$this->widget('BBreadcrumbs',array(
+		'homeLink'=>CHtml::link('Home','javascript:;'),
+		'links'=>array(
+			'Library'=>'javascript:;',
+			'Data',
+		),
 	));
 ```
