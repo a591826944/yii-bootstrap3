@@ -52,6 +52,11 @@ class BMenu extends CMenu
 		}
 		BHtml::mergeClass($this->htmlOptions, $classes);
 	}
+	/**
+	 * 重构，将带有下拉项的菜单使用bootstrap的dropdown替换
+	 * (non-PHPdoc)
+	 * @see CMenu::renderMenuRecursive()
+	 */
 	protected function renderMenuRecursive($items)
 	{
 		$count=0;
@@ -99,6 +104,11 @@ class BMenu extends CMenu
 			echo CHtml::closeTag('li')."\n";
 		}
 	}
+	/**
+	 * 重构，将带有下拉项的菜单使用bootstrap的dropdown替换
+	 * (non-PHPdoc)
+	 * @see CMenu::renderMenuItem()
+	 */
 	protected function renderMenuItem($item)
 	{
 		if (!isset($item['linkOptions']))
