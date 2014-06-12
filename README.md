@@ -29,6 +29,10 @@ github 上现在也有其他的yii的bootstrap的扩展。但是基本都是基�
 
 8.`BBreadcrumbs` > `CBreadcrumbs`
 
+9.`BDetailView` > `CDetailView`
+
+10.`BListView` > `CListView`
+
 	所有的扩展类都以大写字母B开头，新增了一些方法和属性（但是原有的方法和属性都没有变化）。具体查看每个文件来了解新增的方法和属性。
 	例如：
 	BGridView 增加的控制表格样式的属性：tableType，在该属性的上面有四个静态属性，用于指定表格样式，等等。
@@ -172,3 +176,31 @@ view查看按钮，属性`viewButtonImageUrl` 的默认值是 `glyphicon-eye-ope
 		),
 	));
 ```
+##BDetailView新增的方法和属性
+-----
+1.新增`tableType`属性，属性由以下四个常量指定，用于确定表格的样式，默认值：`TABLE_TYPE_STRIPED`    
+
+```
+	/**
+	 * 条纹表格
+	 */
+	const TABLE_TYPE_STRIPED = 'striped';
+	/**
+	 * 带边框表格
+	 */
+	const TABLE_TYPE_BORDERED = 'bordered';
+	/**
+	 * 鼠标悬停 表格
+	 */
+	const TABLE_TYPE_HOVER = 'hover';
+	/**
+	 * 紧缩表格
+	 */
+	const TABLE_TYPE_CONDENSED = 'condensed';
+```
+##BListView新增的方法和属性
+-----
+1.暂无，只是将ListView的默认翻页样式更新到BLinkPager上。  
+
+------
+（未完待续）
