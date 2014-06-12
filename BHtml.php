@@ -22,10 +22,7 @@ class BHtml extends CHtml
 	{
 		if (isset($option['class']) && (!empty($option['class'])))
 		{
-			foreach ($add as $k => $v) 
-			{
-				$option['class'] .= ' '.$v;
-			}
+			$option['class'] .= ' '.implode(' ', $add);
 			
 		}else{
 			
@@ -214,7 +211,10 @@ class BHtml extends CHtml
 	 */
 	public static function submitButton($label = 'submit',$htmlOptions=array())
 	{
-		self::mergeClass($htmlOptions, array('btn btn-primary'));
+		if (!isset($htmlOptions['class']))
+		{
+			self::mergeClass($htmlOptions, array('btn btn-primary'));
+		}
 		return parent::submitButton($label,$htmlOptions);
 	}
 	/**
