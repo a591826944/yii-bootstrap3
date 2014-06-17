@@ -59,7 +59,8 @@ github 上现在也有其他的yii的bootstrap的扩展。但是基本都是基�
 
 ##BActiveForm新增的方法和属性
 --------
-1. 对所有的`input`输入框的元素（text/email/password等）新增带有Group后缀的方法，例如 `textFieldGroup`,会生成 带icon的`input`输入框  
+1. 对所有的`input`输入框的元素（text/email/password等）新增带有Group后缀的方法，例如 `textFieldGroup`,会生成 带icon的`input`输入框    
+2. `submitButton`新增第二个参数`style`，用于指定按钮的样式，详情请参见`BHtml::submitButton`
 
 
 ##BGridView新增的方法和属性
@@ -89,6 +90,24 @@ github 上现在也有其他的yii的bootstrap的扩展。但是基本都是基�
 ##BHtml新增的方法和属性
 -----------------
 1.新增静态方法`mergeClass` 用于组件内部合并用户添加的CSS Class 和 Bootstrap样式的CSS Class  
+2.新增类常量，用于定义按钮的样式，其中包括：
+
+```
+	/**
+	 * 定义bootstrap中的按钮样式
+	 * @var unknown
+	 */
+	const BUTTON_DEFAULT = 'default';
+	const BUTTON_PRIMARY = 'primary';
+	const BUTTON_SUCCESS = 'success';
+	const BUTTON_INFO = 'info';
+	const BUTTON_WARNING = 'warning';
+	const BUTTON_DANGER = 'danger';
+	const BUTTON_LINK = 'link';
+```
+3.`htmlButton`方法新增第二个参数 `$style` 用于传入上面的常量定义的button样式，如果传入的样式不属于上面定义的那些，会报warning。  
+
+4.`submitButton`方法新增第二个参数 `$style`  ,同上。
 
 ##BLinkPager新增的方法和属性
 -------------

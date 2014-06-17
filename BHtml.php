@@ -12,14 +12,6 @@ class BHtml extends CHtml
 	 * 定义bootstrap中的按钮样式
 	 * @var unknown
 	 */
-	protected static $button_default = 'default';
-	protected static $button_primary = 'primary';
-	protected static $button_success = 'success';
-	protected static $button_info = 'info';
-	protected static $button_warning = 'warning';
-	protected static $button_danger = 'danger';
-	protected static $button_link = 'link';
-	
 	const BUTTON_DEFAULT = 'default';
 	const BUTTON_PRIMARY = 'primary';
 	const BUTTON_SUCCESS = 'success';
