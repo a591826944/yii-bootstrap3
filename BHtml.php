@@ -221,9 +221,13 @@ class BHtml extends CHtml
 	 * @param unknown $htmlOptions
 	 * @return string
 	 */
-	public static function submitButton($label = 'submit',$style = self::BUTTON_DEFAULT,$htmlOptions=array())
+	public static function submitButton($label = 'submit',$htmlOptions=array())
 	{
-		self::mergeClass($htmlOptions, array('btn','btn-'.constant('self::'.'BUTTON_'.strtoupper($style))));
+		if (!isset($htmlOptions['buttonStyle'])) 
+		{
+			$htmlOptions['buttonStyle'] = self::BUTTON_DEFAULT;
+		}
+		self::mergeClass($htmlOptions, array('btn','btn-'.constant('self::'.'BUTTON_'.strtoupper($htmlOptions['buttonStyle']))));
 		return parent::submitButton($label,$htmlOptions);
 	}
 	/**
@@ -291,9 +295,13 @@ class BHtml extends CHtml
 	 * @param unknown $htmlOptions
 	 * @return string
 	 */
-	public static function htmlButton($label='button',$style=self::BUTTON_DEFAULT,$htmlOptions=array())
+	public static function htmlButton($label='button',$htmlOptions=array())
 	{
-		self::mergeClass($htmlOptions, array('btn','btn-'.constant('self::'.'BUTTON_'.strtoupper($style))));
+		if (!isset($htmlOptions['buttonStyle']))
+		{
+			$htmlOptions['buttonStyle'] = self::BUTTON_DEFAULT;
+		}
+		self::mergeClass($htmlOptions, array('btn','btn-'.constant('self::'.'BUTTON_'.strtoupper($htmlOptions['buttonStyle']))));
 		return parent::htmlButton($label,$htmlOptions);
 	}
 }

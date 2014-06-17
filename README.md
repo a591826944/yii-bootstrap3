@@ -60,7 +60,7 @@ github 上现在也有其他的yii的bootstrap的扩展。但是基本都是基�
 ##BActiveForm新增的方法和属性
 --------
 1. 对所有的`input`输入框的元素（text/email/password等）新增带有Group后缀的方法，例如 `textFieldGroup`,会生成 带icon的`input`输入框    
-2. `submitButton`新增第二个参数`style`，用于指定按钮的样式，详情请参见`BHtml::submitButton`
+2. `submitButton`可以在`htmlOptions`属性中,使用`buttonStyle`这个key去定义按钮样式，详情请参见`BHtml::submitButton`
 
 
 ##BGridView新增的方法和属性
@@ -105,9 +105,9 @@ github 上现在也有其他的yii的bootstrap的扩展。但是基本都是基�
 	const BUTTON_DANGER = 'danger';
 	const BUTTON_LINK = 'link';
 ```
-3.`htmlButton`方法新增第二个参数 `$style` 用于传入上面的常量定义的button样式，如果传入的样式不属于上面定义的那些，会报warning。  
+3.`htmlButton`可以在`htmlOptions`属性中,使用`buttonStyle`这个key去定义按钮样式，值是上面定义的常量属性，如果传入的样式不属于上面定义的那些，会报warning。  
 
-4.`submitButton`方法新增第二个参数 `$style`  ,同上。
+4.`submitButton`,同上。
 
 ##BLinkPager新增的方法和属性
 -------------
