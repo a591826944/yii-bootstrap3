@@ -9,6 +9,26 @@
 class BHtml extends CHtml 
 {
 	/**
+	 * 定义bootstrap中的按钮样式
+	 * @var unknown
+	 */
+	protected static $button_default = 'default';
+	protected static $button_primary = 'primary';
+	protected static $button_success = 'success';
+	protected static $button_info = 'info';
+	protected static $button_warning = 'warning';
+	protected static $button_danger = 'danger';
+	protected static $button_link = 'link';
+	
+	const BUTTON_DEFAULT = 'default';
+	const BUTTON_PRIMARY = 'primary';
+	const BUTTON_SUCCESS = 'success';
+	const BUTTON_INFO = 'info';
+	const BUTTON_WARNING = 'warning';
+	const BUTTON_DANGER = 'danger';
+	const BUTTON_LINK = 'link';
+	
+	/**
 	 * 默认的errorSummary block样式
 	 * @var string  the CSS class for displaying error summaries (see {@link errorSummary}).
 	 */
@@ -202,19 +222,16 @@ class BHtml extends CHtml
 			return self::tag($container,array('id'=>$baseID),implode($separator,$items));
 	}
 	
-	
-	
 	/**
 	 * 使用bootstrap3样式渲染activeform的submitButton元素
-	 * @param array $htmlOptions
+	 * @param string $label
+	 * @param unknown $style
+	 * @param unknown $htmlOptions
 	 * @return string
 	 */
-	public static function submitButton($label = 'submit',$htmlOptions=array())
+	public static function submitButton($label = 'submit',$style = self::BUTTON_DEFAULT,$htmlOptions=array())
 	{
-		if (!isset($htmlOptions['class']))
-		{
-			self::mergeClass($htmlOptions, array('btn btn-primary'));
-		}
+		self::mergeClass($htmlOptions, array('btn','btn-'.constant('self::'.'BUTTON_'.strtoupper($style))));
 		return parent::submitButton($label,$htmlOptions);
 	}
 	/**
@@ -278,15 +295,13 @@ class BHtml extends CHtml
 	/**
 	 * 使用bootstrap3样式渲染 button按钮
 	 * @param string $label
-	 * @param array $htmlOptions
+	 * @param unknown $style
+	 * @param unknown $htmlOptions
 	 * @return string
 	 */
-	public static function htmlButton($label='button',$htmlOptions=array())
+	public static function htmlButton($label='button',$style=self::BUTTON_DEFAULT,$htmlOptions=array())
 	{
-		if (!isset($htmlOptions['class']))
-		{
-			self::mergeClass($htmlOptions, array('btn btn-default'));
-		}
+		self::mergeClass($htmlOptions, array('btn','btn-'.constant('self::'.'BUTTON_'.strtoupper($style))));
 		return parent::htmlButton($label,$htmlOptions);
 	}
 }

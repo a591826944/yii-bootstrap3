@@ -77,9 +77,9 @@ class BActiveForm extends CActiveForm
 	 * @param array $htmlOptions
 	 * @return string
 	 */
-	public function submitButton($label='submit', $htmlOptions = array())
+	public function submitButton($label='submit',$style = BHtml::BUTTON_DEFAULT, $htmlOptions = array())
 	{
-		return BHtml::submitButton($label,$htmlOptions);
+		return BHtml::submitButton($label,$style,$htmlOptions);
 	}
 	/**
 	 * 使用bootstrap3样式渲染activeform的 errorSummary block
